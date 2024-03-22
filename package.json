@@ -4,6 +4,7 @@
   },
   "dependencies": {
     "@hono/node-server": "^1.8.2",
+    "@xkeshav/alphabet": "^1.2.1",
     "hono": "^4.0.9"
   },
   "devDependencies": {

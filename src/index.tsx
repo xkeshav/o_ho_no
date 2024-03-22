@@ -4,6 +4,8 @@ import { showRoutes } from 'hono/dev';
 import { logger } from 'hono/logger';
 import { Alphabet } from './Alphabet';
 
+import { alphabet } from '@xkeshav/alphabet';
+
 const app = new Hono() // .basePath('/api/v1/');
 
 app.use(logger())
@@ -17,7 +19,7 @@ app.get('/', (c) => {
 })
 
 app.get('/alphabet', (c) => {
-  return c.html(<Alphabet list={[]}/>)
+  return c.html(<Alphabet list={alphabet}/>)
 });
 
 app.onError((err, c) => {
