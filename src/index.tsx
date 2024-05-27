@@ -1,38 +1,87 @@
-import { serve } from '@hono/node-server';
+import { serve } from '@hono/node-server'; // for Node.js Adapter
 import { Hono } from 'hono';
 import { showRoutes } from 'hono/dev';
-import { logger } from 'hono/logger';
-import { Alphabet } from './Alphabet';
+//import colors from './colors';
 
-import { alphabet } from '@xkeshav/alphabet';
+//import { Element } from './Element';
 
-const app = new Hono() // .basePath('/api/v1/');
+////import { Alphabet } from './Alphabet';
+////import { alphabet } from '@xkeshav/alphabet';
 
-app.use(logger())
+const app = new Hono();
 
-app.get('/', (c) => {
-  return c.html(
-  <div>
-    <a href="/alphabet">Alphabet</a>
-  </div>
-  )
-})
+// text
+app.get('/', (c) => c.text('Hello Node.js!'));
+app.on('GET', ['/hello', '/hi', '/hey'], (c) => c.text('🙋🏻‍♂️ Hello' ))
 
-app.get('/alphabet', (c) => {
-  return c.html(<Alphabet list={alphabet}/>)
+// MARK: json support
+app.get('/element', (c) => {
+  return c.json([
+    {
+      id: 1,
+      name: 'Water',
+      emoji: "💧"
+    },
+    {
+      id: 2,
+      name: 'Fire',
+      emoji: "🔥"
+    },
+    {
+      id: 3,
+      name: 'Earth',
+      emoji: "🌍"
+    },
+    {
+      id: 4,
+      name: 'Air',
+      emoji: "💨"
+    },
+    {
+      id: 5,
+      name: 'Sky',
+      emoji: '🌌'
+    },
+  ]);
 });
 
-app.onError((err, c) => {
-  console.error(`${err}`)
-  return c.text('Custom Error Message', 500)
-})
+const element_list  = [
+  {
+    id: 1,
+    name: 'Water',
+    emoji: "💧"
+  },
+  {
+    id: 2,
+    name: 'Fire',
+    emoji: "🔥"
+  },
+  {
+    id: 3,
+    name: 'Earth',
+    emoji: "🌍"
+  },
+  {
+    id: 4,
+    name: 'Air',
+    emoji: "💨"
+  },
+  {
+    id: 5,
+    name: 'Sky',
+    emoji: '🌌'
+  },
+];
 
+//app.get('/element/html', (c) => {
+//  return c.html(<Element list={element_list} />)
+//});
 
-const port = 3000
-console.log(`Server is running on port ${port}`)
+//app.get('/alphabet', (c) => {
+//  return c.html(<Alphabet list={alphabet}/>)
+//});
+
+//app.route('/color', colors); // app.route
+
 showRoutes(app);
-
-serve({
-  fetch: app.fetch,
-  port
-})
+serve(app);

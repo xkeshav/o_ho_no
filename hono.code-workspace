@@ -3,5 +3,12 @@
 		{
 			"path": "."
 		}
-	]
+	],
+	"settings": {
+		"window.title": "${rootName}${separator}${Foldername}${activeFolderMedium}${separator}${activeEditorShort}${separator}",
+		"editor.inlayHints.enabled": "offUnlessPressed",
+		"files.autoSaveWorkspaceFilesOnly": true,
+		"editor.tabCompletion": "onlySnippets",
+		"editor.snippetSuggestions": "top"
+	}
 }

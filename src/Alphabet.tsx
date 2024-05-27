@@ -17,8 +17,6 @@ const itemClass = css`
 }
 `
 
-
-
 export const Alphabet: FC<{ list: string[] }> = ({ list }) => {
   return (
     <Layout>
