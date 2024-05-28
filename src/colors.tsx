@@ -10,29 +10,38 @@ colors.get('/', (c) => {
 
 colors.get('/rainbow', (c) => {
   const headerClass = css`
-    background-color: orange;
+    background-color: hsl(250 100% 50%);
     color: white;
     padding: 1rem;
   `
+  const listClass =css`
+  background-color: #492937e0;
+  list-style-type: none;
+  display:grid;
+  grid-auto-flow: row;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  & li {
+    font-size: 2rem;
+    margin: 0.5rem;
+    border-bottom:1px solid grey;
+    padding-inline:0.5rem;
+  }
+  `
   return c.html(
       <>
-      <Style>{
-      css`
-          ul > li {
-            font-size: 2rem;
-          }
-        `}
-      </Style>
+      <Style/>
       <div>
       <h1 class={headerClass}>Color in Rainbow</h1>
-      <ul>
-        <li>Violet</li>
-        <li>Indigo</li>
-        <li>Blue</li>
-        <li>Green</li>
-        <li>Yellow</li>
-        <li>Orange</li>
-        <li>Red</li>
+      <ul class={listClass}>
+        <li style={{color: 'violet'}}>Violet</li>
+        <li style={{color: 'indigo'}}>Indigo</li>
+        <li style={{color: 'blue'}}>Blue</li>
+        <li style={{color: 'green'}}>Green</li>
+        <li style={{color: 'yellow'}}>Yellow</li>
+        <li style={{color: 'orange'}}>Orange</li>
+        <li style={{color: 'red'}}>Red</li>
       </ul>
     </div></>
   );
@@ -48,15 +57,12 @@ colors.get('/:what', (c) => {
     <head>
       <Style>{
       css`
-      :root {
-        --color: hsl(from ${what} 75 90 40);
-        color-scheme: light dark;
-      }
       main {
-        background-color: ${what};
-        color: var(--color);
+        background: linear-gradient(45deg, ${what} 24%, pink 10%);
+        color: black;
         text-align: center;
         font-size: ${sz ?? 2}rem;
+        mix-blend-mode: difference;
         padding: 1rem;
         margin: 2rem;
         height: 30vh;
