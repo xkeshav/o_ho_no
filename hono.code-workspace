@@ -9,6 +9,26 @@
 		"editor.inlayHints.enabled": "offUnlessPressed",
 		"files.autoSaveWorkspaceFilesOnly": true,
 		"editor.tabCompletion": "onlySnippets",
-		"editor.snippetSuggestions": "top"
+		"editor.snippetSuggestions": "top",
+		"workbench.colorCustomizations": {
+			"activityBar.activeBackground": "#935bb3",
+			"activityBar.background": "#935bb3",
+			"activityBar.foreground": "#e7e7e7",
+			"activityBar.inactiveForeground": "#e7e7e799",
+			"activityBarBadge.background": "#c2a97c",
+			"activityBarBadge.foreground": "#15202b",
+			"commandCenter.border": "#e7e7e799",
+			"sash.hoverBorder": "#935bb3",
+			"statusBar.background": "#784596",
+			"statusBar.foreground": "#e7e7e7",
+			"statusBarItem.hoverBackground": "#935bb3",
+			"statusBarItem.remoteBackground": "#784596",
+			"statusBarItem.remoteForeground": "#e7e7e7",
+			"titleBar.activeBackground": "#784596",
+			"titleBar.activeForeground": "#e7e7e7",
+			"titleBar.inactiveBackground": "#78459699",
+			"titleBar.inactiveForeground": "#e7e7e799"
+		},
+		"peacock.color": "#784596"
 	}
 }

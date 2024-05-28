@@ -38,29 +38,44 @@ colors.get('/rainbow', (c) => {
   );
 });
 
-// path param read
-colors.get('/:what?', (c) => {
-  const what  = c.req.param('what');
-  console.log({what});
+// path params read
+colors.get('/:what', (c) => {
+  const { what }  = c.req.param();
+  const { sz } = c.req.query();
+  console.log({ what, sz });
   return c.html(
     <html>
     <head>
       <Style>{
       css`
-      div {
+      :root {
+        --color: hsl(from ${what} 75 90 40);
+        color-scheme: light dark;
+      }
+      main {
         background-color: ${what};
-        color: color-mix(in lch, white, pink);
-        mix-blend-mode: difference;
+        color: var(--color);
         text-align: center;
-        font-size: 2rem;
+        font-size: ${sz ?? 2}rem;
         padding: 1rem;
-        height: auto;
-        border: 1px solid grey;
+        margin: 2rem;
+        height: 30vh;
+        border: 2px dashed grey;
+        display: grid;
+        place-content: center;
+        & span {
+          border: 2px dashed pink;
+          padding: 0.5rem 1rem;
+        }
       }
       `}
       </Style>
     </head>
-      <body> <div>custom path param value is : {what}</div> </body>
+      <body>
+        <main>
+          <p>Path param value is: <span>{what}</span></p>
+        </main>
+      </body>
     </html>
     )
 });

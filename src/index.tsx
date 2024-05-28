@@ -3,6 +3,7 @@ import { Hono } from 'hono';
 import { showRoutes } from 'hono/dev';
 
 import colors from './colors';
+import { basicAuth } from 'hono/basic-auth';
 //import { Element } from './Element';
 
 //import { alphabet } from '@xkeshav/alphabet';
@@ -13,6 +14,15 @@ const app = new Hono();
 
 // text
 app.get('/', (c) => c.text('Hello Node.js!'));
+
+// set custom headers
+app.get('/welcome', (c) => {
+  c.header('X-Message', 'Hello!');
+  c.header('Content-Type', 'text/plain');
+  return c.body('welcome, see header part of request');
+});
+
+// multiple path 
 app.on('GET', ['/hello', '/hi', '/hey'], (c) => c.text('🙋🏻‍♂️ Hello' ));
 
 const element_list  = [
@@ -42,6 +52,16 @@ const element_list  = [
     emoji: '🌌'
   },
 ];
+app.use(
+  '/auth/*',
+  basicAuth({
+    username: 'hono',
+    password: 'hono',
+  })
+);
+app.get('/auth/page', (c) => {
+  return c.text('You are authorized')
+});
 // MARK: json support
 //app.get('/element', prettyJSON(), (c) => {
 //  return c.json(element_list);
