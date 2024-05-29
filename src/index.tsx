@@ -2,15 +2,15 @@ import { serve } from '@hono/node-server'; // for Node.js Adapter
 import { Hono } from 'hono';
 import { showRoutes } from 'hono/dev';
 
-import colors from './colors';
-import { basicAuth } from 'hono/basic-auth';
-//import { Element } from './Element';
-
-//import { alphabet } from '@xkeshav/alphabet';
-//import { prettyJSON } from 'hono/pretty-json';
-//import { Alphabet } from './Alphabet';
+import jsonWise from './json';
+import htmlWise from './html';
+import colorWise from './colors';
+import { Alphabet } from './Alphabet';
+import { logger } from 'hono/logger';
 
 const app = new Hono();
+
+app.use(logger()) // middleware
 
 // text
 app.get('/', (c) => c.text('Hello Node.js!'));
@@ -25,59 +25,32 @@ app.get('/welcome', (c) => {
 // multiple path 
 app.on('GET', ['/hello', '/hi', '/hey'], (c) => c.text('🙋🏻‍♂️ Hello' ));
 
-const element_list  = [
-  {
-    id: 1,
-    name: 'Water',
-    emoji: "💧"
-  },
-  {
-    id: 2,
-    name: 'Fire',
-    emoji: "🔥"
-  },
-  {
-    id: 3,
-    name: 'Earth',
-    emoji: "🌍"
-  },
-  {
-    id: 4,
-    name: 'Air',
-    emoji: "💨"
-  },
-  {
-    id: 5,
-    name: 'Sky',
-    emoji: '🌌'
-  },
-];
-app.use(
-  '/auth/*',
-  basicAuth({
-    username: 'hono',
-    password: 'hono',
-  })
-);
-app.get('/auth/page', (c) => {
-  return c.text('You are authorized')
-});
 // MARK: json support
-//app.get('/element', prettyJSON(), (c) => {
-//  return c.json(element_list);
-//});
+app.route('/json', jsonWise);
 
 // MARK: HTML support
-//app.get('/element/html', (c) => {
-//  return c.html(<Element list={element_list} />)
-//});
+app.route('/html', htmlWise);
 
 // MARK: JSX Support
-//app.get('/alphabet', (c) => {
-//  return c.html(<Alphabet list={alphabet}/>)
-//});
+app.get('/alphabet', (c) => {
+  return c.html(<Alphabet/>)
+});
 
-app.route('/color', colors); // app.route
+// MARK: CSS support
+app.route('/color', colorWise);
+
+app.onError((err, c) => {
+  console.error(`${err}`)
+  return c.text('Custom Error Message', 500)
+});
 
 showRoutes(app);
 serve(app);
+
+// change default port 
+// const port = 3000
+
+// serve({
+//   fetch: app.fetch,
+//   port
+// })

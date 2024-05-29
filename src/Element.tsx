@@ -20,13 +20,11 @@ const element = css`
 export const Element: FC<ElementProps> = ({list}) => {
   return (
     <html>
-      <head>
-      <Style/>
-      </head>
       <body>
-        <h1>Element List</h1>
+        <Style/>
+        <h1>Element List : HTML supported</h1>
         <main class={main}>
-        {list.map((item) => <div class={element}>{item.name} : {item.emoji} </div>)}
+          {list.map((item) => <div class={element}>{item.name} : {item.emoji} </div>)}
         </main>
       </body>
     </html>

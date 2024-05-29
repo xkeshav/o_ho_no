@@ -3,7 +3,6 @@ import { css, Style } from 'hono/css';
 
 const colors = new Hono();
 
-// MARK: HTML & CSS support
 colors.get('/', (c) => {
   return c.text('type path `rainbow`')
 });
@@ -51,7 +50,7 @@ colors.get('/rainbow', (c) => {
 colors.get('/:what', (c) => {
   const { what }  = c.req.param();
   const { sz } = c.req.query();
-  console.log({ what, sz });
+  // console.log({ what, sz });
   return c.html(
     <html>
     <head>
@@ -69,6 +68,7 @@ colors.get('/:what', (c) => {
         border: 2px dashed grey;
         display: grid;
         place-content: center;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         & span {
           border: 2px dashed pink;
           padding: 0.5rem 1rem;
@@ -79,7 +79,7 @@ colors.get('/:what', (c) => {
     </head>
       <body>
         <main>
-          <p>Path param value is: <span>{what}</span></p>
+          <p>Path param value is:<span>{what}</span></p>
         </main>
       </body>
     </html>
