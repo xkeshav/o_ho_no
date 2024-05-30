@@ -1,4 +1,9 @@
 {
+  "name": "o_ho_no",
+  "version": "1.0.0",
+  "private": false,
+  "publisher": "@xkeshav",
+  "description": " example for honojs learning; used in talks",
   "scripts": {
     "dev": "tsx watch src/index.tsx"
   },
@@ -10,5 +15,21 @@
   "devDependencies": {
     "@types/node": "^20.11.17",
     "tsx": "^3.12.2"
-  }
+  },
+  "keywords": ["honojs", "hono", "server", "typescript"],
+  "author": {
+    "name": "Keshav Mohta",
+    "email" : "xkeshav@gmail.com"
+  },
+  "contributors": [],
+  "license": "see LICENSE in LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xkeshav/to_ho_no.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xkeshav/o_ho_no/issues",
+    "email": "xkeshav@gmail.com"
+  },
+  "homepage": "https://github.io/o_ho_no"
 }
