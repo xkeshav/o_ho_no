@@ -1,14 +1,16 @@
 {
   "scripts": {
-    "dev": "tsx watch src/index.tsx"
+    "dev": "tsx watch src/index.tsx",
+    "build": "tsx ./build.ts"
   },
   "dependencies": {
-    "@hono/node-server": "^1.8.2",
+    "@hono/node-server": "^1.11.1",
     "@xkeshav/alphabet": "^1.2.1",
-    "hono": "^4.0.9"
+    "hono": "^4.4.0"
   },
   "devDependencies": {
     "@types/node": "^20.11.17",
+    "esbuild": "^0.16.17",
     "tsx": "^3.12.2"
   }
 }
