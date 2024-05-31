@@ -1,32 +1,42 @@
-import { css, Style } from 'hono/css';
-import { FC } from 'hono/jsx';
-type Item = {name: string; emoji: string; id: number;};
-type ElementProps = { list : Item[]};
+import { css, Style } from "hono/css";
+import { FC } from "hono/jsx";
 
-const main = css`
-  display:grid;
-  grid-gap: 4px;
-  grid-template-columns: repeat(2,1fr);
-`
-const element = css`
-  display: grid;
-  height: 10rem;
+// MARK: Types
+type Item = { name: string; emoji: string; id: number };
+type ElementProps = { list: Item[] };
+
+// extend classes
+const common = css`
   color: var(--text, white);
   background-color: hwb(var(--hue, 40) 10% 60%);
-  place-content: center;
   font-size: 4rem;
-}
-`
-export const Element: FC<ElementProps> = ({list}) => {
-  return (
-    <html>
-      <body>
-        <Style/>
-        <h1>Element List : HTML supported</h1>
-        <main class={main}>
-          {list.map((item) => <div class={element}>{item.name} : {item.emoji} </div>)}
-        </main>
-      </body>
-    </html>
-  );
-}
+`;
+const main__container = css`
+  display: grid;
+  grid-gap: 4px;
+  grid-template-columns: repeat(2, 1fr);
+`;
+const element__item = css`
+  ${common}
+  display: grid;
+  height: 10rem;
+  place-content: center;
+`;
+
+const Element: FC<ElementProps> = ({ list }) => (
+  <html>
+    <body>
+      <Style />
+      <h1>Five Elements</h1>
+      <main class={main__container}>
+        {list.map((item) => (
+          <div class={element__item}>
+            {item.name} : {item.emoji}{" "}
+          </div>
+        ))}
+      </main>
+    </body>
+  </html>
+);
+
+export { Element, ElementProps };

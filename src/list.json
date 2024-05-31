@@ -1,0 +1,7 @@
+[
+  { "id": 1, "name": "Water", "emoji": "💧" },
+  { "id": 2, "name": "Fire", "emoji": "🔥" },
+  { "id": 3, "name": "Earth", "emoji": "🌍" },
+  { "id": 4, "name": "Air", "emoji": "💨" },
+  { "id": 5, "name": "Sky", "emoji": "🌌" }
+]

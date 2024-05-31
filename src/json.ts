@@ -1,9 +1,9 @@
 import { Hono } from 'hono';
 import { prettyJSON } from 'hono/pretty-json';
 
-const jsonWise = new Hono();
+const jsonRoute = new Hono();
 
-const element_list  = [
+const element_list = [
   {
     id: 1,
     name: 'Water',
@@ -31,12 +31,8 @@ const element_list  = [
   },
 ];
 
-jsonWise.all('/', (c) => {
-  return c.text('write `list` to path to see the json data.');
-});
+jsonRoute.all('/', (c) => c.html('write `list` to path to see the json data.'));
 
-jsonWise.get('/list', prettyJSON(), (c) => {
-  return c.json(element_list);
-});
+jsonRoute.get('/list', prettyJSON(), (c) => c.json(element_list));
 
-export default jsonWise;
+export default jsonRoute;

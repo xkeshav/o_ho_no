@@ -25,7 +25,7 @@ Here are few examples with honojs
 - use of `c.header()` and `c.body()`
 - endpoint: `/welcome`
 
-### Multiple paths  
+### Multiple paths
 
 - multiple path return same page; no redirect logic
 - endpoint: `/hello` or `/hey` or `/hi`
@@ -35,7 +35,7 @@ Here are few examples with honojs
 - use of `c.json()`
 - endpoint: `/json/list`
 
-### HTML response  
+### HTML response
 
 - use of `c.html()`
 - endpoint: `/html/list`
@@ -48,8 +48,8 @@ Here are few examples with honojs
 
 ### Path Params and Query Params
 
-- add any valid color in place of *white* as a path params
-- endpoint: `/color/white` 
+- add any valid color in place of _white_ as a path params
+- endpoint: `/color/white`
 
 ---
 
@@ -61,7 +61,6 @@ Here are few examples with honojs
 - use of reusable component like react
 - endpoint: `/alphabet`
 
-
 ## Author
 
-Keshav Mohta | [@xkeshav](https://www.xkeshav.com)  
+Keshav Mohta | [@xkeshav](https://www.xkeshav.com)

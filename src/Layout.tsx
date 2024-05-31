@@ -1,14 +1,15 @@
 import { Style, css } from 'hono/css';
 import { FC } from 'hono/jsx';
 
-export const Layout: FC = (props) => {
-  return (
+const Layout: FC = (props) => (
     <html>
       <head>
 				<Style>{
 				css`
           html {
             font-family: Arial, Helvetica, sans-serif;
+            background-color: greenyellow;
+            font-size: 16px;
           }
 					:root {
 						--hue: 10;
@@ -18,5 +19,7 @@ export const Layout: FC = (props) => {
 				</head>
       <body>{props.children}</body>
     </html>
-  )
-};
+);
+
+export { Layout };
+
