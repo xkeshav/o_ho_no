@@ -1,38 +1,38 @@
-import { Hono } from 'hono';
-import { prettyJSON } from 'hono/pretty-json';
+import { Hono } from "hono";
+import { prettyJSON } from "hono/pretty-json";
 
 const jsonRoute = new Hono();
 
 const element_list = [
   {
     id: 1,
-    name: 'Water',
-    emoji: "💧"
+    name: "Water",
+    emoji: "💧",
   },
   {
     id: 2,
-    name: 'Fire',
-    emoji: "🔥"
+    name: "Fire",
+    emoji: "🔥",
   },
   {
     id: 3,
-    name: 'Earth',
-    emoji: "🌍"
+    name: "Earth",
+    emoji: "🌍",
   },
   {
     id: 4,
-    name: 'Air',
-    emoji: "💨"
+    name: "Air",
+    emoji: "💨",
   },
   {
     id: 5,
-    name: 'Sky',
-    emoji: '🌌'
+    name: "Sky",
+    emoji: "🌌",
   },
 ];
 
-jsonRoute.all('/', (c) => c.html('write `list` to path to see the json data.'));
+jsonRoute.all("/", c => c.text("write `list` to path to see the json data."));
 
-jsonRoute.get('/list', prettyJSON(), (c) => c.json(element_list));
+jsonRoute.get("/list", prettyJSON(), c => c.json(element_list));
 
 export default jsonRoute;

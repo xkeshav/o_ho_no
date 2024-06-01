@@ -11,6 +11,8 @@ npm run dev
 
 and this will open [http://localhost:3000](http://localhost:3000)
 
+Note: uploaded with cloudflare adapter --> <https://80d1222e.hono-fly.pages.dev>
+
 ## Examples
 
 Here are few examples with honojs
@@ -25,6 +27,7 @@ Here are few examples with honojs
 - use of `c.header()` and `c.body()`
 - endpoint: `/welcome`
 
+
 ### Multiple paths
 
 - multiple path return same page; no redirect logic
@@ -32,13 +35,13 @@ Here are few examples with honojs
 
 ### JSON response
 
-- use of `c.json()`
+- use of `c.json()` and `app.all()` route
 - endpoint: `/json/list`
 
 ### HTML response
 
 - use of `c.html()`
-- endpoint: `/html/list`
+- endpoint: `/html/element`
 
 ### CSS Support
 

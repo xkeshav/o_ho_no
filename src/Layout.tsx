@@ -2,10 +2,10 @@ import { Style, css } from 'hono/css';
 import { FC } from 'hono/jsx';
 
 const Layout: FC = (props) => (
-    <html>
-      <head>
-				<Style>{
-				css`
+  <html>
+    <head>
+      <Style>{
+        css`
           html {
             font-family: Arial, Helvetica, sans-serif;
             background-color: greenyellow;
@@ -15,10 +15,10 @@ const Layout: FC = (props) => (
 						--hue: 10;
 					}
         `}
-				</Style>
-				</head>
-      <body>{props.children}</body>
-    </html>
+      </Style>
+    </head>
+    <body>{props.children}</body>
+  </html>
 );
 
 export { Layout };

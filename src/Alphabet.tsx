@@ -30,7 +30,7 @@ const Letter: FC = ({ what, idx }) => (
 );
 
 // MARK: JSX Support
-export const Alphabet: FC = () => (
+const Alphabet: FC = () => (
   <Layout>
     <h1>Alphabets</h1>
     <div class={parentContainer}>
@@ -40,3 +40,4 @@ export const Alphabet: FC = () => (
     </div>
   </Layout>
 );
+export { Alphabet }

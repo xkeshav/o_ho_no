@@ -11,9 +11,9 @@ padding: 1rem;
 `;
 
 
-const ColorHome = () => <><Style/><p class={headerClass}>type path /rainbow</p></>;
+const ColorHome = () => <><Style /><p class={headerClass}>type path /rainbow</p></>;
 
-colorRoute.get("/", (c) => c.html(<ColorHome/>));
+colorRoute.get("/", (c) => c.html(<ColorHome />));
 
 colorRoute.get("/rainbow", (c) => {
   // css as object
@@ -78,7 +78,7 @@ colorRoute.get("/:what", (c) => {
               padding: 1rem;
               margin: 2rem;
               height: 30vh;
-              border: 2px dashed grey;
+              border: 2px solid grey;
               display: grid;
               place-content: center;
               box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
