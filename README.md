@@ -23,28 +23,28 @@ Here are few examples with honojs
 
 ### Text response
 
-- use of `c.text()`
 - endpoint: `/`
+- use of `c.text()`
 
 ### Custom Header
 
-- use of `c.header()` and `c.body()`
 - endpoint: `/welcome`
+- use of `c.header()` and `c.body()`
 
 ### Multiple paths
 
-- multiple path return same page; no redirect logic
 - endpoint: `/hello` or `/hey` or `/hi`
+- multiple path return same page; no redirect logic
 
 ### JSON response
 
-- use of `c.json()` and `app.all()` route
 - endpoint: `/json/list`
+- use of `c.json()` and `app.all()` route
 
 ### HTML response
 
-- use of `c.html()`
 - endpoint: `/html/element`
+- use of `c.html()`
 
 ### CSS Support
 
@@ -52,20 +52,20 @@ Here are few examples with honojs
 
 - `/color/rainbow`
 
-### Path Params and Query Params
+### Path Params
 
-- add any valid color in place of _white_ as a path params
 - endpoint: `/color/white`
+- add any valid color in place of _white_ as a path params
 
----
+### Query Params
 
-- change font size with query params `sz`
 - endpoint: `/color/white?sz=3`
+- change font size with query params `sz`
 
 ### JSX Support
 
-- use of reusable component like react
 - endpoint: `/alphabet`
+- use of reusable component like react
 
 ## Author
 

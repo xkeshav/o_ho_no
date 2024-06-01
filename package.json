@@ -1,6 +1,6 @@
 {
   "name": "o_ho_no",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": false,
   "publisher": "@xkeshav",
   "description": "basic learning pad for hono.js; used this example in a talk",
@@ -10,7 +10,7 @@
   "dependencies": {
     "@hono/node-server": "^1.8.2",
     "@xkeshav/alphabet": "^1.2.1",
-    "hono": "^4.0.9"
+    "hono": "^4.4.2"
   },
   "devDependencies": {
     "@types/node": "^20.11.17",
@@ -36,5 +36,5 @@
     "url": "https://github.com/xkeshav/o_ho_no/issues",
     "email": "xkeshav@gmail.com"
   },
-  "homepage": "https://github.io/o_ho_no"
+  "homepage": "https://master.hono-fly.pages.dev/"
 }
