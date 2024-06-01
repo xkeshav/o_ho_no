@@ -11,7 +11,11 @@ npm run dev
 
 and this will open [http://localhost:3000](http://localhost:3000)
 
-Note: uploaded with cloudflare adapter --> <https://80d1222e.hono-fly.pages.dev>
+## Web Page
+
+[https://master.hono-fly.pages.dev/](https://master.hono-fly.pages.dev)
+
+Note: using cloudflare adapter and uploaded from [separate repo](https://github.com/xkeshav/hono-fly)
 
 ## Examples
 
@@ -26,7 +30,6 @@ Here are few examples with honojs
 
 - use of `c.header()` and `c.body()`
 - endpoint: `/welcome`
-
 
 ### Multiple paths
 
