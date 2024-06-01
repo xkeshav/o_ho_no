@@ -40,4 +40,5 @@ const Alphabet: FC = () => (
     </div>
   </Layout>
 );
-export { Alphabet }
+
+export { Alphabet };

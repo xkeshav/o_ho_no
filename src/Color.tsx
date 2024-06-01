@@ -10,7 +10,6 @@ color: white;
 padding: 1rem;
 `;
 
-
 const ColorHome = () => <><Style /><p class={headerClass}>type path /rainbow</p></>;
 
 colorRoute.get("/", (c) => c.html(<ColorHome />));
@@ -32,7 +31,6 @@ colorRoute.get("/rainbow", (c) => {
       letter-spacing: 0.25ch;
     }
   `;
-
   const borderClass = css`
     border: 4px solid black;
     border-radius: 0.5rem;
@@ -58,7 +56,7 @@ colorRoute.get("/rainbow", (c) => {
   );
 });
 
-// path params read
+// MARK: path params
 colorRoute.get("/:what", (c) => {
   const { what } = c.req.param(); // const what = c.req.param('what');
   const { sz } = c.req.query();

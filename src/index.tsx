@@ -12,7 +12,7 @@ import jsonRoute from "./json";
 
 const app = new Hono();
 
-app.use(logger()); // middleware
+app.use(logger());
 app.use("/*", cors());
 
 // text

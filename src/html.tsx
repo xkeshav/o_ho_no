@@ -2,12 +2,11 @@ import { Hono } from "hono";
 import { Style, css } from 'hono/css';
 
 import { Element } from './Element';
-import list from './list.json';
+import list from './list.json'; // import json file
 
 const htmlRoute = new Hono();
 
-//htmlRoute.get("/", (c) => c.text('type /element'));
-
+// MARK: HTML with CSS
 htmlRoute.get("/", (c) => c.html(
   <html>
     <head>

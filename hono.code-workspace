@@ -33,6 +33,7 @@
 		"files.exclude": {
 			".github/**": true,
 			".vscode/**": true
-		}
+		},
+		"window.zoomLevel": 1.5
 	}
 }

@@ -32,7 +32,7 @@ const element_list = [
 ];
 
 jsonRoute.all("/", c => c.text("write `list` to path to see the json data."));
-
+// MARK: JSON middleware
 jsonRoute.get("/list", prettyJSON(), c => c.json(element_list));
 
 export default jsonRoute;
